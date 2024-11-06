@@ -2,6 +2,15 @@
 
 This repository contains an Arduino project showcasing master-slave communication using the I2C protocol. With this setup, a master Arduino can send targeted commands to multiple slave Arduinos, each with a unique address, allowing for organized and selective communication across multiple devices. Here, each arduino can switch from master to slave based on whether it is sending or receiving a message. This code serves as a foundation for various multi-device applications like lighting control, environmental monitoring, and distributed robotics.
 
+## Table of Contents
+
+- [Features](#features)
+- [Applications](#applications)
+- [Code Descriptions](#code-descriptions)
+- [Schematic](#schematic)
+- [Setting Up the Project](#setting-up-the-project)
+- [Usage](#usage)
+
 ## Features
 
 - **Master-Slave Communication**: Efficient communication between one master and multiple slave Arduinos using the I2C protocol.
@@ -24,11 +33,11 @@ These codes can be adapted for a range of projects, such as:
 - **I2C_Selective_Transmission**: This code allows the master Arduino to send commands only to specified slave Arduinos. Using selective addressing, the master targets individual or specific slaves based on user input, making it ideal for systems requiring zone-specific control or data collection.
   
 -  **I2C_Combined**: This code is a combination of the above two code. It enables the master arduino to send a message to specified slave Arduinos as well as only to all connected slave Arduinos simultaneously, based on the users input.
+
 ## Schematic
 ![image](https://github.com/user-attachments/assets/ff77d04a-b6a3-4fe1-b8b6-5358f5cf5f2e)
 
-
-## Getting Started
+## Setting up the project
 
 ### Prerequisites
 
@@ -50,9 +59,5 @@ These codes can be adapted for a range of projects, such as:
 
 - **Master Commands**: Send commands via the Serial Monitor to control specific slave Arduinos. Each command should include the slave’s I2C address and the action
 - **Slave Responses**: Each slave Arduino can send back data or status updates to the master based on the command it receives.
-
-## Code Overview
-
-- **Master Arduino**: Reads commands from the Serial Monitor and sends messages to designated slave addresses.
-- **Slave Arduino**: Receives commands from the master and performs actions or sends data back based on the received command.
+  
 
