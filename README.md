@@ -22,7 +22,8 @@ These codes can be adapted for a range of projects, such as:
 - **I2C_Broadcast**: This code enables the master Arduino to send a message to all connected slave Arduinos simultaneously, allowing for system-wide commands, such as activating all devices or triggering a system reset.
   
 - **I2C_Selective_Transmission**: This code allows the master Arduino to send commands only to specified slave Arduinos. Using selective addressing, the master targets individual or specific slaves based on user input, making it ideal for systems requiring zone-specific control or data collection.
-
+  
+-  **I2C_Combined**: This code is a combination of the above two code. It enables the master arduino to send a message to specified slave Arduinos as well as only to all connected slave Arduinos simultaneously, based on the users input.
 ## Schematic
 ![image](https://github.com/user-attachments/assets/ff77d04a-b6a3-4fe1-b8b6-5358f5cf5f2e)
 
