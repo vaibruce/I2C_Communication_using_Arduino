@@ -1,12 +1,11 @@
 #include <Wire.h>
 String message1="";
 String message2="";
-int i;
-int slaveAddress[]={5,8};
-int numSlaves = sizeof(slaveAddress) / sizeof(slaveAddress[0]);
+int slaveAddress[]={0,2};
+int numSlaves = sizeof(slaveAddresses) / sizeof(slaveAddresses[0]);
 
 void setup(){
-  Wire.begin(2);
+  Wire.begin(8);
   Wire.onReceive(recieve);
   Serial.begin(9600);
 }
@@ -16,14 +15,12 @@ void loop(){
   if(Serial.available()>0)
   {
     message2=Serial.readStringUntil('\n');
-    char d=message2[0];
-    i=(int)d-48;
-    message2.remove(0,1);
-    Serial.println(i);
-    Wire.beginTransmission(i);
+    for(int i=0;i<size;i++){
+    Wire.beginTransmission(slaveAddress[i]);
     Wire.write(message2.c_str());
     Wire.endTransmission();
-     
+    }
+    
   }  
  
   delay(100);
@@ -35,7 +32,6 @@ void recieve()
   while(Wire.available()>0)
   {
     char c=Wire.read();
-    
     message1+=c;
   }
    Serial.println(message1);
