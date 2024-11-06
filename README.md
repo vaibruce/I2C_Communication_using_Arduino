@@ -40,6 +40,10 @@ These codes can be adapted for a range of projects, such as:
 5. Connect the GND pins together.
 6. Open the Serial Monitor to send commands from the master and observe responses.
 
+### Schematic
+![image](https://github.com/user-attachments/assets/ff77d04a-b6a3-4fe1-b8b6-5358f5cf5f2e)
+
+
 ### Usage
 
 - **Master Commands**: Send commands via the Serial Monitor to control specific slave Arduinos. Each command should include the slave’s I2C address and the action
