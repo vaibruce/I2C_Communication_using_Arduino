@@ -36,7 +36,7 @@ This code can be adapted for a range of projects, such as:
 
 ### Usage
 
-- **Master Commands**: Send commands via the Serial Monitor to control specific slave Arduinos. Each command should include the slave’s I2C address and the action (e.g., `5ON` to turn on a device connected to the slave with address 5).
+- **Master Commands**: Send commands via the Serial Monitor to control specific slave Arduinos. Each command should include the slave’s I2C address and the action
 - **Slave Responses**: Each slave Arduino can send back data or status updates to the master based on the command it receives.
 
 ## Code Overview
