@@ -2,7 +2,7 @@
 String message1="";
 String message2="";
 int slaveAddress[]={0,2};
-int numSlaves = sizeof(slaveAddresses) / sizeof(slaveAddresses[0]);
+int numSlaves = sizeof(slaveAddress) / sizeof(slaveAddress[0]);
 
 void setup(){
   Wire.begin(8);
@@ -15,7 +15,7 @@ void loop(){
   if(Serial.available()>0)
   {
     message2=Serial.readStringUntil('\n');
-    for(int i=0;i<size;i++){
+    for(int i=0;i<numSlaves;i++){
     Wire.beginTransmission(slaveAddress[i]);
     Wire.write(message2.c_str());
     Wire.endTransmission();
