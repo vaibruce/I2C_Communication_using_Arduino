@@ -23,6 +23,10 @@ These codes can be adapted for a range of projects, such as:
   
 - **I2C_Selective_Transmission**: This code allows the master Arduino to send commands only to specified slave Arduinos. Using selective addressing, the master targets individual or specific slaves based on user input, making it ideal for systems requiring zone-specific control or data collection.
 
+## Schematic
+![image](https://github.com/user-attachments/assets/ff77d04a-b6a3-4fe1-b8b6-5358f5cf5f2e)
+
+
 ## Getting Started
 
 ### Prerequisites
@@ -39,9 +43,6 @@ These codes can be adapted for a range of projects, such as:
 4. Connect the Arduinos via I2C (SDA and SCL pins).
 5. Connect the GND pins together.
 6. Open the Serial Monitor to send commands from the master and observe responses.
-
-### Schematic
-![image](https://github.com/user-attachments/assets/ff77d04a-b6a3-4fe1-b8b6-5358f5cf5f2e)
 
 
 ### Usage
