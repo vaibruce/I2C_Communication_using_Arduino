@@ -3,12 +3,12 @@ String message1="";
 String message2="";
 int address;
 String addr="";
-int slaveAddress[]={5,8};
+int slaveAddress[]={5,8}; //Enter all the address available
 int slaveAddress1[10];
 int numSlaves = sizeof(slaveAddress) / sizeof(slaveAddress[0]);
 
 void setup(){
-  Wire.begin(2);
+  Wire.begin(2); //Enter your address here
   Wire.onReceive(receive);
   Serial.begin(9600);
   Serial.println("Enter the addresses you want to send the message to with a ");
@@ -38,16 +38,16 @@ void loop(){
         }
       }
 
-      if (addr != "") {
-       address = addr.toInt();
+      if (addr != "") {           //This condition is necessary to read the last character 
+       address = addr.toInt();    //as there is no trailing space
        slaveAddress1[i] = address;
        addr = "";
       }
 
       Serial.println("Selected slave address:"+message2);
       Serial.println("Enter the message");
-      while (Serial.available() == 0);
-      message2 = Serial.readStringUntil('\n'); 
+      while (Serial.available() == 0);           //Necessary to make the execution wait until the message 
+      message2 = Serial.readStringUntil('\n');  // is entered by the master.
       
       
     if( slaveAddress1[0]==0)
