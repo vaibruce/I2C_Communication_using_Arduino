@@ -1,7 +1,7 @@
 #include <Wire.h>
 String message1="";
 String message2="";
-int address=NULL;
+int address;
 int slaveAddress[]={5,8};
 int numSlaves = sizeof(slaveAddress) / sizeof(slaveAddress[0]);
 
@@ -20,12 +20,14 @@ void loop(){
   {
     String message2 = Serial.readStringUntil('\n'); 
    
-    if(message2==""){
+    if(message2.length()>0){
       address=message2.toInt();
-      Serial.println("Selected slave address:"+address);
+      Serial.println("Selected slave address:"+ String(address));
       Serial.println("Enter the message");
       }
       
+      while(Serial.available()==0);
+      message2=Serial.readStringUntil('\n');
     if(address==0)
     {
     for(int i=0;i<numSlaves;i++){
@@ -33,17 +35,18 @@ void loop(){
     Wire.write(message2.c_str());
     Wire.endTransmission();
     }
+     Serial.println("Message is broadcasted to all address");
     }
-    else if(address!=NULL){
+    else{
     Wire.beginTransmission(address);
     Wire.write(message2.c_str());
     Wire.endTransmission(); 
+    Serial.println("Message sent to: "+String(address));
     }
-    }
-
      message2 = "";  // Reset for next input
-     Serial.println("Enter slave addresses :");
-      
+     Serial.println("Enter new slave addresses :");
+     
+    } 
  
   delay(100);
 
