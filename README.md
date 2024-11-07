@@ -34,6 +34,8 @@ These codes can be adapted for a range of projects, such as:
   
 -  **I2C_Combined**: This code is a combination of the above two code. It enables the master arduino to send a message to specified slave Arduinos as well as only to all connected slave Arduinos simultaneously, based on the users input.
 
+-   **I2C_Combined_Multiple_Select (Advanced):** This a bit advanced version of "I2C_Combinned" which enables the master to select multiple address send the message.
+
 ## Schematic
 ![image](https://github.com/user-attachments/assets/ff77d04a-b6a3-4fe1-b8b6-5358f5cf5f2e)
 
